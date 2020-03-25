@@ -1,0 +1,7 @@
+[DVTest]
+channel=DVTest
+order=4
+name=David Content
+type=app
+app_context=Splunk_Security_Essentials
+content_download_url=SPLUNKD/static/app/SA-SSE-Custom/dvtest_new_content_example.json
