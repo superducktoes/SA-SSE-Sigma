@@ -72,9 +72,12 @@ def generate_output(data, search_output, rule_path):
         rule_name:
         {
             "SPLEase": "None",
-            "alertvolume": "Low",
+            "alertvolume": "Other",
             "app": "Sigma",
             "category": category,
+            "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.",
+            "company_link": "https://github.com/Neo23x0/sigma",
+            "company_logo": "https://github.com/Neo23x0/sigma/blob/master/images/Sigma_0.3.png",
             "dashboard": "showcase_custom?showcaseId={}".format(rule_name),
             "data_source_categories": data_source_category,
             "description": data['description'],
@@ -97,6 +100,7 @@ def generate_output(data, search_output, rule_path):
             "mitre_tactic":"",
             "mitre_technique": attack_reference_string,
             "name": data['title'],
+            "printable_image": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
             "released": "3.0.0",
             "searchKeywords": "",
             "search_name": "",
