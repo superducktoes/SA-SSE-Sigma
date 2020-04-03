@@ -8,6 +8,9 @@ path_to_tools = "/root/sigma/tools"
 
 def generate_output(data, search_output, rule_path):
 
+    # use this to get the link to the github page
+    page_link = "https://github.com/Neo23x0/sigma/blob/master/{}".format(rule_path[12:])
+
     # get the rule name from the path and remove extension
     rule_name = (rule_path.split("/")[-1]).split(".")[0]
 
@@ -75,8 +78,8 @@ def generate_output(data, search_output, rule_path):
             "alertvolume": "Other",
             "app": "Sigma",
             "category": category,
-            "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.",
-            "company_link": "https://github.com/Neo23x0/sigma",
+            "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: {}".format(data['author']),
+            "company_link": page_link,
             "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
             "dashboard": "showcase_custom?showcaseId={}".format(rule_name),
             "data_source_categories": data_source_category,
