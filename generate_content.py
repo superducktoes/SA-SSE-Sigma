@@ -57,8 +57,8 @@ def generate_output(data, search_output, rule_path):
         data_source_category = "VendorSpecific-aws-cloudtrail"
     elif "proxy" in rule_path:
         data_source_category = "DS005WebProxyRequest-ET01Requested"
-    else:
-        data_source_category = "VendorSpecific-AnySplunk"
+    elif "linux" in rule_path:
+        data_source_category = "DS009EndPointIntel"
 
 
     # make a guess about the domain
