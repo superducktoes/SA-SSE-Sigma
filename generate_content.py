@@ -54,10 +54,12 @@ def generate_output(data, search_output, rule_path):
         false_positives = "None"
 
     # make a guess as to what the data source is. If nothing fall back to all logs
+    stage = "Stage_1"
     if "windows" in rule_path:
         data_source_category = "VendorSpecific-winsec"
     elif "aws" in rule_path:
         data_source_category = "VendorSpecific-aws-cloudtrail"
+        stage = "Stage_3"
     elif "proxy" in rule_path:
         data_source_category = "DS005WebProxyRequest-ET01Requested"
     elif "linux" in rule_path:
@@ -97,7 +99,7 @@ def generate_output(data, search_output, rule_path):
             "highlight": "No",
             "icon": "Core_Use_Case.png",
             "includeSSE": "Yes",
-            "journey": "Stage_1",
+            "journey": stage,
             "knownFP": false_positives,
             "mitre": "",
             "mitre_tactic":"",
