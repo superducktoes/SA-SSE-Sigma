@@ -1,58 +1,22 @@
 {
-    "aws_guardduty_disruption": {
-	"SPLEase": "None",
-	"app": "Sigma",
-	"category": "SaaS",
-	"company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: faloker",
-	"company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_guardduty_disruption.yml",
-	"company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
-	"dashboard": "showcase_custom?showcaseId=aws_guardduty_disruption",
-	"data_source_categories": "VendorSpecific-aws-cloudtrail",
-	"description": "Detects updates of the GuardDuty list of trusted IPs, perhaps to disable security alerts against malicious IPs.",
-	"displayapp": "Sigma",
-	"additional_context": [
-	    {
-		"search": "(eventSource=\"guardduty.amazonaws.com\" eventName=\"CreateIPSet\")\n",
-		"open_panel": true,
-		"title": "AWS GuardDuty Important Change",
-		"link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/guardduty__whitelist_ip/main.py#L9"
-	    }
-	],
-	"domain": "Access",
-	"hasSearch": "Yes",
-	"help": "Help not needed",
-	"highlight": "No",
-	"icon": "Core_Use_Case.png",
-	"includeSSE": "Yes",
-	"journey": "Stage_1",
-	"knownFP": "Valid change in the GuardDuty (e.g. to ignore internal scanners)",
-	"mitre": "",
-	"mitre_tactic": "",
-	"mitre_technique": "|T1089",
-	"name": "AWS GuardDuty Important Change",
-	"released": "3.0.0",
-	"searchKeywords": "",
-	"search_name": "",
-	"usecase": "Security Monitoring"
-    },
-      "aws_config_disable_recording": {
+  "aws_cloudtrail_disable_logging": {
     "SPLEase": "None",
     "alertvolume": "Other",
     "app": "Sigma",
     "category": "SaaS",
     "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: vitaliy0x1",
-    "company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_config_disable_recording.yml",
+    "company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_cloudtrail_disable_logging.yml",
     "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
-    "dashboard": "showcase_custom?showcaseId=aws_config_disable_recording",
+    "dashboard": "showcase_custom?showcaseId=aws_cloudtrail_disable_logging",
     "data_source_categories": "VendorSpecific-aws-cloudtrail",
     "displayapp": "Sigma",
     "additional_context": [
       {
-        "search": "(eventSource=\"config.amazonaws.com\" (eventName=\"DeleteDeliveryChannel\" OR eventName=\"StopConfigurationRecorder\"))\n",
+        "search": "(eventSource=\"cloudtrail.amazonaws.com\" (eventName=\"StopLogging\" OR eventName=\"UpdateTrail\" OR eventName=\"DeleteTrail\"))\n",
         "open_panel": true,
-        "title": "AWS Config Disabling Channel/Recorder",
-        "description": "Detects AWS Config Service disabling",
-        "link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_config_disable_recording.yml"
+        "title": "AWS CloudTrail Important Change",
+        "description": "Detects disabling, deleting and updating of a Trail",
+        "link": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/best-practices-security.html"
       }
     ],
     "domain": "Access",
@@ -62,15 +26,15 @@
     "icon": "Core_Use_Case.png",
     "includeSSE": "Yes",
     "journey": "Stage_1",
-    "knownFP": "Valid change in AWS Config Service",
+    "knownFP": "Valid change in a Trail",
     "mitre": "",
     "mitre_tactic": "",
     "mitre_technique": "|T1089",
-    "name": "AWS Config Disabling Channel/Recorder",
+    "name": "AWS CloudTrail Important Change",
     "released": "3.0.0",
     "searchKeywords": "",
     "search_name": "",
     "usecase": "Security Monitoring"
-  }
+  }    
 }
 

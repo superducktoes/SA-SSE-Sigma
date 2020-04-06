@@ -83,12 +83,12 @@ def generate_output(data, search_output, rule_path):
             "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
             "dashboard": "showcase_custom?showcaseId={}".format(rule_name),
             "data_source_categories": data_source_category,
-            "description": data['description'],
             "displayapp": "Sigma",
             "additional_context": [{
                 "search": search_output,
                 "open_panel": True,
                 "title": data['title'],
+                "description": data['description'],
                 "link": reference
                 }],
             "domain": domain,
