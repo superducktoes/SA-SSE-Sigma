@@ -319,5 +319,40 @@
                 "link": "http://rubular.com/r/zxBfjWfFYs"
             }
         ]
-    }
+    },
+    "test_sigma_content" {
+	"SPLEase": "",
+	"advancedtags": "",
+	"alertvolume": "Other",
+	"category": "Data Exfiltration",
+	"company_description": "test desc",
+	"company_link": "http://nickroy.org",
+	"company_logo": "https://accedian-splunk-apps.s3-us-west-2.amazonaws.com/dependencies/pictures/appIcon_2x.png",
+	"company_logo_height": "250",
+	"company_logo_width": "250",
+	"company_name": "Sigma",
+	"dashboard": "showcase_custom?showcaseId=test_sigma_content",
+	"data_source_categories": "DS010NetworkCommunication-ET01TrafficAppAware",
+	"description": "test description",
+	"displayapp": "Splunk_Security_Essentials",
+	"domain": "",
+	"help": "",
+	"highlight": "No",
+	"howToImplement": "",
+	"icon": "https://accedian-splunk-apps.s3-us-west-2.amazonaws.com/dependencies/pictures/appIcon_2x.png",
+	"id": "test_sigma_content",
+	"inSplunk": "yes",
+	"journey": "Stage_3",
+	"killchain": "Actions on Objective",
+	"knownFP": "",
+	"mitre_tactic": "TA0010",
+	"mitre_technique": "T1048",
+	"name": "Sigma test content",
+	"operationalize": "",
+	"printable_image": "",
+	"relevance": "test relevance",
+	"search": "",
+	"searchKeywords":"",
+	"severity": "Critical",
+	"usecase": "Security Monitoring"
 }
