@@ -22,8 +22,7 @@
         "dashboard": "showcase_custom?showcaseId=lnx_dd_delete_file",
         "help": "Help not needed",
         "knownFP": "Appending null bytes to files",
-        "search": "(type=\"EXECVE\" a0=\"*dd*\" (a1=\"*if=/dev/null*\" OR a1=\"*if=/dev/zero*\"))\n",
-        "data_source_categories": "DS009EndPointIntel",
+	"data_source_categories": "DS009EndPointIntel",
         "mitre_technique": "|T1485",
         "mitre_tactic": "",
         "additional_context": [

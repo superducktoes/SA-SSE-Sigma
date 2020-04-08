@@ -76,39 +76,42 @@ def generate_output(data, search_output, rule_path):
     parsed_data = {
         rule_name:
         {
-            "SPLEase": "None",
+            "name": data['title'],
+            "alertvolume": "None",
+            "inSplunk": "yes",
+            "journey": stage,
+            "usecase": "Security Monitoring",
+            "highlight": "No",
+            "id": rule_name,
+            "channel": "Sigma",
             "alertvolume": "Other",
-            "app": "Sigma",
             "category": category,
+            "description": data['description'],
+            "domain": domain,
+            "killchain": "",
+            "SPLEase": "None",
+            "searchKeywords": "",
+            "icon": "Core_Use_Case.png",
+            "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
+            "company_name": "Sigma",
             "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: {}".format(data['author']),
             "company_link": page_link,
-            "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
             "dashboard": "showcase_custom?showcaseId={}".format(rule_name),
+            "help": "Help not needed",
+            "knownFP": false_positives,
             "data_source_categories": data_source_category,
+            "mitre_technique": attack_reference_string,
+            "mitre_tactic":"",
+            "app": "Sigma",
             "displayapp": "Sigma",
             "additional_context": [{
                 "search": search_output,
                 "open_panel": True,
                 "title": data['title'],
-                "description": data['description'],
+                "detail": data['description'],
                 "link": reference
-                }],
-            "domain": domain,
-            "hasSearch": "Yes",
-            "help": "Help not needed",
-            "highlight": "No",
-            "icon": "Core_Use_Case.png",
-            "includeSSE": "Yes",
-            "journey": stage,
-            "knownFP": false_positives,
-            "mitre": "",
-            "mitre_tactic":"",
-            "mitre_technique": attack_reference_string,
-            "name": data['title'],
-            "released": "3.0.0",
-            "searchKeywords": "",
-            "search_name": "",
-            "usecase": "Security Monitoring"
+                }
+            ]
         }
     }
     
