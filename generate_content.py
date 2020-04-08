@@ -77,7 +77,7 @@ def generate_output(data, search_output, rule_path):
         rule_name:
         {
             "name": data['title'],
-            "alertvolume": "",
+            "alertvolume": "Low",
             "inSplunk": "yes",
             "journey": stage,
             "usecase": "Security Monitoring",
