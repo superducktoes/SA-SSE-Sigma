@@ -117,5 +117,45 @@
                 "link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_config_disable_recording.yml"
             }
         ]
+	},
+    "aws_ec2_download_userdata": {
+        "name": "AWS EC2 Download Userdata",
+        "alertvolume": "Other",
+        "inSplunk": "yes",
+        "journey": "Stage_3",
+        "usecase": "Security Monitoring",
+        "highlight": "No",
+        "id": "aws_ec2_download_userdata",
+        "channel": "Sigma",
+        "category": "SaaS",
+        "description": "Detects bulk downloading of User Data associated with AWS EC2 instances. Instance User Data may include installation scripts and hard-coded secrets for deployment.",
+        "domain": "Access",
+        "killchain": "",
+        "SPLEase": "None",
+        "searchKeywords": "",
+        "icon": "Core_Use_Case.png",
+        "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
+        "company_name": "Sigma",
+        "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: faloker",
+        "company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_ec2_download_userdata.yml",
+        "dashboard": "showcase_custom?showcaseId=aws_ec2_download_userdata",
+        "help": "Help not needed",
+        "knownFP": "Assets management software like device42",
+        "data_source_categories": "VendorSpecific-aws-cloudtrail",
+        "mitre_technique": "|T1020",
+        "mitre_tactic": "",
+        "app": "Sigma",
+        "displayapp": "Sigma",
+        "hasSearch": "Yes",
+        "featured": "No",
+        "additional_context": [
+            {
+                "search": "(eventSource=\"ec2.amazonaws.com\" requestParameters.attribute=\"userData\" eventName=\"DescribeInstanceAttribute\") | eventstats count as val | search val > 10\n",
+                "open_panel": true,
+                "title": "AWS EC2 Download Userdata",
+                "detail": "Detects bulk downloading of User Data associated with AWS EC2 instances. Instance User Data may include installation scripts and hard-coded secrets for deployment.",
+                "link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/ec2__download_userdata/main.py#L24"
+            }
+        ]
     }
 }
