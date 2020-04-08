@@ -82,6 +82,7 @@ def generate_output(data, search_output, rule_path):
             "journey": stage,
             "usecase": "Security Monitoring",
             "highlight": "No",
+            "description": data['description'], 
             "id": rule_name,
             "channel": "Sigma",
             "alertvolume": "Other",
