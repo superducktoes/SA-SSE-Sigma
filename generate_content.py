@@ -77,7 +77,7 @@ def generate_output(data, search_output, rule_path):
         rule_name:
         {
             "name": data['title'],
-            "alertvolume": "Low",
+            "alertVolume": "Low",
             "inSplunk": "yes",
             "journey": stage,
             "usecase": "Security Monitoring",
@@ -86,8 +86,6 @@ def generate_output(data, search_output, rule_path):
             "channel": "Sigma",
             "alertvolume": "Other",
             "category": category,
-            "description": data['description'],
-            "relevance": data['description'],
             "domain": domain,
             "killchain": "",
             "SPLEase": "None",

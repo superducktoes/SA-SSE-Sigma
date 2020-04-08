@@ -238,5 +238,45 @@
                 "link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/iam__backdoor_users_keys/main.py#L6"
             }
         ]
+	},
+        "aws_rds_change_master_password": {
+        "name": "AWS RDS Master Password Change",
+        "alertVolume": "Low",
+        "inSplunk": "yes",
+        "journey": "Stage_3",
+        "usecase": "Security Monitoring",
+        "highlight": "No",
+        "id": "aws_rds_change_master_password",
+        "channel": "Sigma",
+        "alertvolume": "Other",
+        "category": "SaaS",
+        "domain": "Access",
+        "killchain": "",
+        "SPLEase": "None",
+        "searchKeywords": "",
+        "icon": "Core_Use_Case.png",
+        "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
+        "company_name": "Sigma",
+        "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: faloker",
+        "company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_rds_change_master_password.yml",
+        "dashboard": "showcase_custom?showcaseId=aws_rds_change_master_password",
+        "help": "Help not needed",
+        "knownFP": "Benign changes to a db instance",
+        "data_source_categories": "VendorSpecific-aws-cloudtrail",
+        "mitre_technique": "|T1020",
+        "mitre_tactic": "",
+        "app": "Sigma",
+        "displayapp": "Sigma",
+        "hasSearch": "Yes",
+        "featured": "No",
+        "additional_context": [
+            {
+                "search": "(eventSource=\"rds.amazonaws.com\" responseElements.pendingModifiedValues.masterUserPassword=\"*\" eventName=\"ModifyDBInstance\")\n",
+                "open_panel": true,
+                "title": "AWS RDS Master Password Change",
+                "detail": "Detects the change of database master password. It may be a part of data exfiltration.",
+                "link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/rds__explore_snapshots/main.py#L10"
+            }
+        ]
     }
 }
