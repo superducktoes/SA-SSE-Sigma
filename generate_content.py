@@ -87,6 +87,7 @@ def generate_output(data, search_output, rule_path):
             "alertvolume": "Other",
             "category": category,
             "description": data['description'],
+            "relevance": data['description'],
             "domain": domain,
             "killchain": "",
             "SPLEase": "None",

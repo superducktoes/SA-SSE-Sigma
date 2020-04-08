@@ -197,5 +197,46 @@
                 "link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/guardduty__whitelist_ip/main.py#L9"
             }
         ]
+	},
+        "aws_iam_backdoor_users_keys": {
+        "name": "AWS IAM Backdoor Users Keys",
+        "alertvolume": "Other",
+        "inSplunk": "yes",
+        "journey": "Stage_3",
+        "usecase": "Security Monitoring",
+        "highlight": "No",
+        "id": "aws_iam_backdoor_users_keys",
+        "channel": "Sigma",
+        "category": "SaaS",
+        "description": "Detects AWS API key creation for a user by another user. Backdoored users can be used to obtain persistence in the AWS environment. Also with this alert, you can detect a flow of AWS keys in your org.",
+        "relevance": "Detects AWS API key creation for a user by another user. Backdoored users can be used to obtain persistence in the AWS environment. Also with this alert, you can detect a flow of AWS keys in your org.",
+        "domain": "Access",
+        "killchain": "",
+        "SPLEase": "None",
+        "searchKeywords": "",
+        "icon": "Core_Use_Case.png",
+        "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
+        "company_name": "Sigma",
+        "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: faloker",
+        "company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_iam_backdoor_users_keys.yml",
+        "dashboard": "showcase_custom?showcaseId=aws_iam_backdoor_users_keys",
+        "help": "Help not needed",
+        "knownFP": "Adding user keys to their own accounts (the filter cannot cover all possible variants of user naming)",
+        "data_source_categories": "VendorSpecific-aws-cloudtrail",
+        "mitre_technique": "|T1098",
+        "mitre_tactic": "",
+        "app": "Sigma",
+        "displayapp": "Sigma",
+        "hasSearch": "Yes",
+        "featured": "No",
+        "additional_context": [
+            {
+                "search": "((eventSource=\"iam.amazonaws.com\" eventName=\"CreateAccessKey\") NOT (userIdentity.arn=\"*responseElements.accessKey.userName*\")) | table userIdentity.arn,responseElements.accessKey.userName,errorCode,errorMessage\n",
+                "open_panel": true,
+                "title": "AWS IAM Backdoor Users Keys",
+                "detail": "Detects AWS API key creation for a user by another user. Backdoored users can be used to obtain persistence in the AWS environment. Also with this alert, you can detect a flow of AWS keys in your org.",
+                "link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/iam__backdoor_users_keys/main.py#L6"
+            }
+        ]
     }
 }
