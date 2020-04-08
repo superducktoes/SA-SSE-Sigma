@@ -77,7 +77,7 @@ def generate_output(data, search_output, rule_path):
         rule_name:
         {
             "name": data['title'],
-            "alertvolume": "None",
+            "alertvolume": "",
             "inSplunk": "yes",
             "journey": stage,
             "usecase": "Security Monitoring",
@@ -104,6 +104,8 @@ def generate_output(data, search_output, rule_path):
             "mitre_tactic":"",
             "app": "Sigma",
             "displayapp": "Sigma",
+            "hasSearch": "Yes",
+            "featured": "No",
             "additional_context": [{
                 "search": search_output,
                 "open_panel": True,
