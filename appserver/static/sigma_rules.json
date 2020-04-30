@@ -1,7 +1,7 @@
 {
     "lnx_dd_delete_file": {
 	"name": "Overwriting the File with Dev Zero or Null",
-	"alertvolume": "Low",
+	"alertvolume": "",
 	"inSplunk": "no",
 	"journey": "Stage_1",
 	"usecase": "Security Monitoring",
