@@ -42,5 +42,91 @@
 		"link": "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1485/T1485.yaml"
 	    }
 	]
+    },
+    "lnx_shellshock": {
+	"name": "Shellshock Expression",
+	"alertvolume": "Low",
+	"inSplunk": "no",
+	"journey": "Stage_1",
+	"usecase": "Security Monitoring",
+	"highlight": "No",
+	"description": "Detects shellshock expressions in log files",
+	"id": "lnx_shellshock",
+	"channel": "Sigma",
+	"category": "Adversary Tactics",
+	"domain": "",
+	"howToImplement": "",
+	"killchain": "",
+	"SPLEase": "",
+	"searchKeywords": "",
+	"icon": "Core_Use_Case.png",
+	"company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
+	"company_name": "Sigma",
+	"company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: Florian Roth",
+	"company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/linux/lnx_shellshock.yml",
+	"dashboard": "showcase_custom?showcaseId=lnx_shellshock",
+	"help": "Help not needed",
+	"knownFP": "Unknown",
+	"data_source_categories": "DS009EndPointIntel",
+	"mitre_technique": "",
+	"mitre_tactic": "",
+	"app": "Sigma",
+	"displayapp": "Splunk_Security_Essentials",
+	"hasSearch": "Yes",
+	"featured": "No",
+	"advancedtags": "",
+	"additional_context": [
+	    {
+		"search": "\"/\\\\(\\\\)\\\\s*\\\\t*\\\\{.*;\\\\s*\\\\}\\\\s*;/\"\n",
+		"open_panel": true,
+		"title": "Shellshock Expression",
+		"detail": "Detects shellshock expressions in log files",
+		"link": "http://rubular.com/r/zxBfjWfFYs"
+	    }
+	]
+    },
+    {
+	"aws_ec2_startup_script_change": {
+	    "name": "AWS EC2 Startup Shell Script Change",
+	    "alertvolume": "Low",
+	    "inSplunk": "no",
+	    "journey": "Stage_3",
+	    "usecase": "Security Monitoring",
+	    "highlight": "No",
+	    "description": "Detects changes to the EC2 instance startup script. The shell script will be executed as root/SYSTEM everytime the specific instances are booted up.",
+	    "id": "aws_ec2_startup_script_change",
+	    "channel": "Sigma",
+	    "category": "SaaS",
+	    "domain": "",
+	    "howToImplement": "",
+	    "killchain": "",
+	    "SPLEase": "",
+	    "searchKeywords": "",
+	    "icon": "Core_Use_Case.png",
+	    "company_logo": "https://raw.githubusercontent.com/Neo23x0/sigma/master/images/Sigma_0.3.png",
+	    "company_name": "Sigma",
+	    "company_description": "Sigma is a generic and open signature format that allows you to describe relevant log events in a straight forward manner. The rule format is very flexible, easy to write and applicable to any type of log file. The main purpose of this project is to provide a structured form in which researchers or analysts can describe their once developed detection methods and make them shareable with others.\n Author: faloker",
+	    "company_link": "https://github.com/Neo23x0/sigma/blob/master/rules/cloud/aws_ec2_startup_script_change.yml",
+	    "dashboard": "showcase_custom?showcaseId=aws_ec2_startup_script_change",
+	    "help": "Help not needed",
+	    "knownFP": "Valid changes to the startup script",
+	    "data_source_categories": "VendorSpecific-aws-cloudtrail",
+	    "mitre_technique": "T1064",
+	    "mitre_tactic": "",
+	    "app": "Sigma",
+	    "displayapp": "Splunk_Security_Essentials",
+	    "hasSearch": "Yes",
+	    "featured": "No",
+	    "advancedtags": "",
+	    "additional_context": [
+		{
+		    "search": "(eventSource=\"ec2.amazonaws.com\" requestParameters.userData=\"*\" eventName=\"ModifyInstanceAttribute\")\n",
+		    "open_panel": true,
+		    "title": "AWS EC2 Startup Shell Script Change",
+		    "detail": "Detects changes to the EC2 instance startup script. The shell script will be executed as root/SYSTEM everytime the specific instances are booted up.",
+		    "link": "https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/ec2__startup_shell_script/main.py#L9"
+		}
+	    ]
+	}
     }
 }
