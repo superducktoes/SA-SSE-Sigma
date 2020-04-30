@@ -24,7 +24,7 @@
 	"help": "Help not needed",
 	"knownFP": "Appending null bytes to files",
 	"data_source_categories": "DS009EndPointIntel",
-	"mitre_technique": "|T1485",
+	"mitre_technique": "T1485",
 	"mitre_tactic": "",
 	"app": "Sigma",
 	"displayapp": "Splunk_Security_Essentials",
